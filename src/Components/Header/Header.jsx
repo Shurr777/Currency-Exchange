@@ -13,7 +13,7 @@ const Header = ({updateData, USD, EUR}) => {
                 <HeaderItem>Euro {EUR}</HeaderItem>
             </HeaderContainer>
             <ButtonContainer>
-                <Button onClick={() => updateData()}>Обновить курс</Button>
+                <Button onClick={() => updateData()}>Update course</Button>
             </ButtonContainer>
         </div>
     );

@@ -10,7 +10,10 @@ import Footer from "../Footer/footer";
 
 const CurrencyPageContainer = ({courses, countries, setCourseThunk, USD, EUR, UAH}) => {
 
-    let euro = USD / EUR;
+    const euro = (USD / EUR).toFixed(4);
+    const usd = (USD).toFixed(4);
+
+
 
     useEffect(() => {
         setCourseThunk();
@@ -23,7 +26,7 @@ const CurrencyPageContainer = ({courses, countries, setCourseThunk, USD, EUR, UA
 
     return (
         <Page>
-            <Header updateData={updateData} USD={USD} EUR={euro} UAH={UAH}/>
+            <Header updateData={updateData} USD={usd} EUR={euro}/>
             <BodyBlockContainer courses={courses}/>
             <Footer/>
         </Page>
