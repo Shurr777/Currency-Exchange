@@ -8,12 +8,10 @@ import BodyBlockContainer from "../Body/BodyBlockContainer";
 import Footer from "../Footer/footer";
 
 
-const CurrencyPageContainer = ({courses, countries, setCourseThunk, USD, EUR, UAH}) => {
+const CurrencyPageContainer = ({courses, countries, setCourseThunk, USD, EUR}) => {
 
-    const euro = (USD / EUR).toFixed(4);
-    const usd = (USD).toFixed(4);
-
-
+    const euro = (USD / EUR);
+    const usd = (USD);
 
     useEffect(() => {
         setCourseThunk();
