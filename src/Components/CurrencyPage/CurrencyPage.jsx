@@ -1,10 +1,11 @@
 import React, {useEffect} from 'react';
 import {Page} from './CurrencyPageStyle'
 import {connect} from "react-redux";
-import {getCountries, getCourses, getEUR, getUAH, getUSD} from "../../Store/Selectors/selectors";
-import {setCountriesThunk, setCourseThunk} from "../../Store/exchangeReducer";
+import {getCourses, getEUR, getUAH, getUSD} from "../../Store/Selectors/selectors";
+import {setCourseThunk} from "../../Store/exchangeReducer";
 import Header from "../Header/Header";
-import BodyBlock from "../Body/BodyBlock";
+import BodyBlockContainer from "../Body/BodyBlockContainer";
+import Footer from "../Footer/footer";
 
 
 const CurrencyPageContainer = ({courses, countries, setCourseThunk, USD, EUR, UAH}) => {
@@ -15,6 +16,7 @@ const CurrencyPageContainer = ({courses, countries, setCourseThunk, USD, EUR, UA
         setCourseThunk();
     }, []);
 
+//  Updating course
     const updateData = () => {
         setCourseThunk()
     };
@@ -22,7 +24,8 @@ const CurrencyPageContainer = ({courses, countries, setCourseThunk, USD, EUR, UA
     return (
         <Page>
             <Header updateData={updateData} USD={USD} EUR={euro} UAH={UAH}/>
-            <BodyBlock courses={courses}/>
+            <BodyBlockContainer courses={courses}/>
+            <Footer/>
         </Page>
     );
 };
@@ -30,7 +33,6 @@ const CurrencyPageContainer = ({courses, countries, setCourseThunk, USD, EUR, UA
 const mapStateToProps = (state) => {
     return {
         courses: getCourses(state),
-        /*countries: getCountries(state),*/
         USD: getUSD(state),
         EUR: getEUR(state),
         UAH: getUAH(state)

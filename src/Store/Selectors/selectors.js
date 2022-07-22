@@ -1,6 +1,3 @@
-export const getCountries = (state) =>{
-    return state.exchangeData.countries
-};
 export const getCourses = (state) =>{
     return state.exchangeData.courses
 };

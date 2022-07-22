@@ -6,8 +6,6 @@ let reducers = combineReducers({
     exchangeData: exchangeReducer,
 });
 
-
-
 const store = createStore(reducers,(applyMiddleware(thunkMiddleware)
 ));
 

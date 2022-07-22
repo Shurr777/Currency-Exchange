@@ -1,7 +1,7 @@
 import React from 'react';
 import {Button, ButtonContainer, H1, H2, H5, HeaderContainer, HeaderItem} from "./HeaderContainerStyle";
 
-const Header = ({updateData, USD, EUR, UAH}) => {
+const Header = ({updateData, USD, EUR}) => {
 
     return (
         <div>
@@ -11,10 +11,9 @@ const Header = ({updateData, USD, EUR, UAH}) => {
             <HeaderContainer>
                 <HeaderItem>Dollar {USD}</HeaderItem>
                 <HeaderItem>Euro {EUR}</HeaderItem>
-                {/*<HeaderItem>Hryvnya {UAH}</HeaderItem>*/}
             </HeaderContainer>
             <ButtonContainer>
-                <Button onClick={() => updateData()}>update course</Button>
+                <Button onClick={() => updateData()}>Обновить курс</Button>
             </ButtonContainer>
         </div>
     );

@@ -8,20 +8,16 @@ const initState = {
     UAH: ['UAH', 0],
     USD: ['USD', 0],
     EUR: ['EUR', 0]
-}
+};
 
 export const exchangeReducer = (state = initState, action) => {
     switch (action.type) {
         case SET_CURRENT_DATA:
-            /*console.log('reducerData', action.payload.courses);*/
+            const data = action.payload.courses;
+            const eur = Object.entries(data).filter((el) => el[0] === 'EUR');
+            const uah = Object.entries(data).filter((el) => el[0] === 'UAH');
+            const usd = Object.entries(data).filter((el) => el[0] === 'USD');
 
-            let eur = Object.entries(action.payload.courses).filter((el) => el[0] === 'EUR');
-            let uah = Object.entries(action.payload.courses).filter((el) => el[0] === 'UAH');
-            let usd = Object.entries(action.payload.courses).filter((el) => el[0] === 'USD');
-
-            /*console.log('eur',eur);
-            console.log('usd',usd);
-            console.log('uah',uah);*/
             return {
                 ...state,
                 courses: {...action.payload.courses},
@@ -35,17 +31,11 @@ export const exchangeReducer = (state = initState, action) => {
     }
 };
 
+// Action creators
 const setCoursesData = (courses) => ({type: SET_CURRENT_DATA, payload: {courses}});
-const setCountriesData = (countries) => ({type: SET_CURRENT_DATA, payload: {countries}});
 
-
+// Thunk creators
 export const setCourseThunk = () => async (dispatch) => {
-    const course = await CurrencyExchangeAPI.getCourse()
-    /*console.log('course', course.rates)*/
+    const course = await CurrencyExchangeAPI.getCourse();
     dispatch(setCoursesData(course.rates))
 };
-
-/*export const setCountriesThunk = () => async (dispatch) => {
-    const countries = await CurrencyExchangeAPI.getCountries();
-    dispatch(setCountriesData(countries))
-};*/
