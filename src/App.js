@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import CurrencyPageContainer from "./Components/CurrencyPage/CurrencyPage";
+import {Provider} from "react-redux";
+import store from "./Store/store";
+import Container from "@mui/material/Container/Container";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="App">
+            <header className="App-header">
+                <Provider store={store}>
+                    <Container maxWidth='lg'>
+                        <CurrencyPageContainer/>
+                    </Container>
+                </Provider>
+            </header>
+        </div>
+    );
 }
 
 export default App;
