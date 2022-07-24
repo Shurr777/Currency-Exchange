@@ -10,8 +10,8 @@ import Footer from "../Footer/footer";
 
 const CurrencyPageContainer = ({courses, countries, setCourseThunk, USD, EUR}) => {
 
-    const euro = (USD / EUR);
-    const usd = (USD);
+    const euro = Number(USD / EUR).toFixed(2);
+    const usd = Number(USD).toFixed(2);
 
     useEffect(() => {
         setCourseThunk();

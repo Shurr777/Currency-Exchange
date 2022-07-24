@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const H1 = styled.h1`
     color: #444;
-    padding-top: 5rem;
+    padding-top: 2rem;
     text-align: center;
 `;
 
@@ -19,7 +19,7 @@ export const H5 = styled.h5`
 `;
 
 export const HeaderContainer = styled.div`
-    padding-top: 2rem;
+    padding-top: 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr;
 `;

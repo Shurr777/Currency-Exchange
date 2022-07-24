@@ -1,15 +1,25 @@
 import styled from "styled-components";
 
 export const BodyOverlay = styled.div`
-    padding-top: 5rem; 
+    display: flex;
+    padding-top: 3rem; 
+    justify-content: center;
+    grid-gap: 2rem;
+    
+    @media (max-width: 768px) {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    flex-direction: column;
+
+  }
 `;
 
 export const CurrencyBlock = styled.div`
+  
     display: flex;
-    justify-self: center;
+    justify-items: center;
     max-width: 25rem;
+    margin: 1rem 0;
 `;
 
 export const Input = styled.input`
