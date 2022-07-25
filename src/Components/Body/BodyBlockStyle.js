@@ -4,18 +4,15 @@ export const BodyOverlay = styled.div`
     display: flex;
     padding-top: 3rem; 
     justify-content: center;
-    grid-gap: 2rem;
-    
-    @media (max-width: 768px) {
+    grid-gap: 2rem;  
+    @media (max-width: 850px) {
     display: grid;
     justify-items: center;
     flex-direction: column;
-
   }
 `;
 
 export const CurrencyBlock = styled.div`
-  
     display: flex;
     justify-items: center;
     max-width: 25rem;
@@ -23,16 +20,21 @@ export const CurrencyBlock = styled.div`
 `;
 
 export const Input = styled.input`
-    width: 10rem;
+    padding: 0.5rem;
+    width: 15rem;
     margin-left: 2rem;
     background-color: #eeefff;
     outline: none;
     font-size: 2rem;
 `;
 
+export const H3 = styled.h3`
+   margin-left: 5rem; 
+`;
+
 export const Select = styled.select`
     display: block;
-    font-size: 16px;
+    font-size: 20px;
     font-family: sans-serif;
     font-weight: 700;
     color: #444;

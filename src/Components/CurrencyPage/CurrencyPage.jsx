@@ -6,9 +6,17 @@ import {setCourseThunk} from "../../Store/exchangeReducer";
 import Header from "../Header/Header";
 import BodyBlockContainer from "../Body/BodyBlockContainer";
 import Footer from "../Footer/footer";
+import {staticData} from "../../Store/staticData"
 
 
-const CurrencyPageContainer = ({courses, countries, setCourseThunk, USD, EUR}) => {
+const CurrencyPageContainer = ({
+                                   courses,
+                                   countries,
+                                   setCourseThunk,
+                                   USD,
+                                   EUR,
+                                   staticData
+                               }) => {
 
     const euro = Number(USD / EUR).toFixed(2);
     const usd = Number(USD).toFixed(2);
@@ -25,7 +33,7 @@ const CurrencyPageContainer = ({courses, countries, setCourseThunk, USD, EUR}) =
     return (
         <Page>
             <Header updateData={updateData} USD={usd} EUR={euro}/>
-            <BodyBlockContainer courses={courses}/>
+            <BodyBlockContainer courses={courses} staticData={staticData}/>
             <Footer/>
         </Page>
     );
@@ -33,6 +41,7 @@ const CurrencyPageContainer = ({courses, countries, setCourseThunk, USD, EUR}) =
 
 const mapStateToProps = (state) => {
     return {
+        staticData:staticData,
         courses: getCourses(state),
         USD: getUSD(state),
         EUR: getEUR(state),
