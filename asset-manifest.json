@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Currency-Exchange/static/css/main.42a2c263.css",
-    "main.js": "/Currency-Exchange/static/js/main.22fd76cb.js",
+    "main.js": "/Currency-Exchange/static/js/main.9a0a4738.js",
     "static/js/787.fec58e52.chunk.js": "/Currency-Exchange/static/js/787.fec58e52.chunk.js",
     "static/media/razmesti_reklamu_enl-2.png": "/Currency-Exchange/static/media/razmesti_reklamu_enl-2.4e806f386410130fc695.png",
     "index.html": "/Currency-Exchange/index.html",
     "main.42a2c263.css.map": "/Currency-Exchange/static/css/main.42a2c263.css.map",
-    "main.22fd76cb.js.map": "/Currency-Exchange/static/js/main.22fd76cb.js.map",
+    "main.9a0a4738.js.map": "/Currency-Exchange/static/js/main.9a0a4738.js.map",
     "787.fec58e52.chunk.js.map": "/Currency-Exchange/static/js/787.fec58e52.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.42a2c263.css",
-    "static/js/main.22fd76cb.js"
+    "static/js/main.9a0a4738.js"
   ]
 }
